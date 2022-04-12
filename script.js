@@ -410,19 +410,21 @@ console.log(sacarPromedio([1, 2, 3, 4, 10]))
 */
 
 class Pelicula {
-  constructor({ id, titulo, director, año, pais, genero, calificacion }) {
+  constructor({ id, titulo, director, año, pais, generos, calificacion }) {
     this.id = id
     this.titulo = titulo
     this.director = director
     this.año = año
     this.pais = pais
-    this.genero = genero
+    this.generos = generos
     this.calificacion = calificacion
 
     this.validarIMDB(id)
     this.validarDirector(director)
     this.validarTitulo(titulo)
     this.validarPais(pais)
+    this.validarGeneros(generos)
+    this.validarCalificacion(calificacion)
   }
 
   static get listaGeneros() {
@@ -460,7 +462,7 @@ class Pelicula {
 
   static mostrarGeneros() {
     return console.info(
-      `lista de Géneros Aceptadas: ${Pelicula.listaGeneros.join(', ')}`
+      `lista de Géneros Aceptados: ${Pelicula.listaGeneros.join(', ')}`
     )
   }
 
@@ -532,14 +534,68 @@ class Pelicula {
   validarPais(pais) {
     this.validarArreglo('Pais', pais)
   }
+
+  validarGeneros(generos) {
+    if (this.validarArreglo('Géneros', generos)) {
+      for (let genero of generos) {
+        if (!Pelicula.listaGeneros.includes(genero)) {
+          console.error(
+            `Genero(s) Incorrecto(s) "${genero}" no está incluida en la lista.`
+          )
+          Pelicula.mostrarGeneros()
+        }
+      }
+    }
+  }
+  validarCalificacion(calificacion) {
+    if (this.validarNumero('Calificación:', calificacion)) {
+      return calificacion < 0 || calificacion > 10
+        ? console.warn('La calificación tiene que ser entre 0 y 10')
+        : (this.calificacion = calificacion.toFixed(1))
+    }
+  }
+
+  mostrarFicha({ id, titulo, director, año, pais, generos, calificacion }) {
+    console.info(
+      `Título: ${titulo} \nDirector: ${director} \nAño: ${año} \nPaises: ${pais.join(
+        ' - '
+      )} \nGéneros: ${generos.join(
+        ' - '
+      )} \nCalificación: ${calificacion} \nID IMDB: ${id}`
+    )
+  }
 }
 
-Pelicula.mostrarGeneros()
+const peliculasFavoritas = [
+  {
+    id: 'tt1234567',
+    titulo: 'Señor de los Anillos',
+    director: 'Peter Jackson',
+    año: 2010,
+    pais: ['Nueva Zelanda'],
+    generos: ['Comedy', 'Action'],
+    calificacion: 9,
+  },
+  {
+    id: 'jh1234456',
+    titulo: 'Captain America: The Winter Soldier',
+    director: 'Pepito',
+    año: 2012,
+    pais: ['EE.UU'],
+    generos: ['Action', 'Comedy'],
+    calificacion: 8.5,
+  },
+  {
+    id: 'jh1234456',
+    titulo: 'Equilibrium',
+    director: 'Pepito',
+    año: 2000,
+    pais: ['EE.UU', 'Germany'],
+    generos: ['Action', 'Comedy'],
+    calificacion: 8.5,
+  },
+]
 
-let pelicula = new Pelicula({
-  id: 'tt1234567',
-  titulo: 'Señor de los Anillos',
-  director: 'Peter Jackson',
-  año: 2010,
-  pais: ['Nueva Zelanda'],
+peliculasFavoritas.forEach(element => {
+  new Pelicula(element).mostrarFicha(element)
 })
