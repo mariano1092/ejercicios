@@ -409,193 +409,193 @@ function sacarPromedio(array) {
 console.log(sacarPromedio([1, 2, 3, 4, 10]))
 */
 
-class Pelicula {
-  constructor({ id, titulo, director, año, pais, generos, calificacion }) {
-    this.id = id
-    this.titulo = titulo
-    this.director = director
-    this.año = año
-    this.pais = pais
-    this.generos = generos
-    this.calificacion = calificacion
+// class Pelicula {
+//   constructor({ id, titulo, director, año, pais, generos, calificacion }) {
+//     this.id = id
+//     this.titulo = titulo
+//     this.director = director
+//     this.año = año
+//     this.pais = pais
+//     this.generos = generos
+//     this.calificacion = calificacion
 
-    this.validarIMDB(id)
-    this.validarDirector(director)
-    this.validarTitulo(titulo)
-    this.validarPais(pais)
-    this.validarGeneros(generos)
-    this.validarCalificacion(calificacion)
-  }
+//     this.validarIMDB(id)
+//     this.validarDirector(director)
+//     this.validarTitulo(titulo)
+//     this.validarPais(pais)
+//     this.validarGeneros(generos)
+//     this.validarCalificacion(calificacion)
+//   }
 
-  static get listaGeneros() {
-    return [
-      'Action',
-      'Adult',
-      'Adventure',
-      'Animation',
-      'Biography',
-      'Comedy',
-      'Crime',
-      'Documentary',
-      'Drama',
-      'Family',
-      'Fantasy',
-      'Film Noir',
-      'Game-Show',
-      'History',
-      'Horror',
-      'Musical',
-      'Music',
-      'Mystery',
-      'News',
-      'Reality-TV',
-      'Romance',
-      'Sci-Fi',
-      'Short',
-      'Sport',
-      'Talk-Show',
-      'Thriller',
-      'War',
-      'Western',
-    ]
-  }
+//   static get listaGeneros() {
+//     return [
+//       'Action',
+//       'Adult',
+//       'Adventure',
+//       'Animation',
+//       'Biography',
+//       'Comedy',
+//       'Crime',
+//       'Documentary',
+//       'Drama',
+//       'Family',
+//       'Fantasy',
+//       'Film Noir',
+//       'Game-Show',
+//       'History',
+//       'Horror',
+//       'Musical',
+//       'Music',
+//       'Mystery',
+//       'News',
+//       'Reality-TV',
+//       'Romance',
+//       'Sci-Fi',
+//       'Short',
+//       'Sport',
+//       'Talk-Show',
+//       'Thriller',
+//       'War',
+//       'Western',
+//     ]
+//   }
 
-  static mostrarGeneros() {
-    return console.info(
-      `lista de Géneros Aceptados: ${Pelicula.listaGeneros.join(', ')}`
-    )
-  }
+//   static mostrarGeneros() {
+//     return console.info(
+//       `lista de Géneros Aceptados: ${Pelicula.listaGeneros.join(', ')}`
+//     )
+//   }
 
-  validarCadena(propiedad, valor) {
-    if (!valor) return console.warn(`${propiedad} "${valor}" está vacia.`)
-    if (typeof valor !== 'string')
-      return console.warn(`${propiedad} "${valor}" No es una cadena de texto.`)
+//   validarCadena(propiedad, valor) {
+//     if (!valor) return console.warn(`${propiedad} "${valor}" está vacia.`)
+//     if (typeof valor !== 'string')
+//       return console.warn(`${propiedad} "${valor}" No es una cadena de texto.`)
 
-    return true
-  }
+//     return true
+//   }
 
-  validarNumero(propiedad, valor) {
-    if (!valor) return console.warn(`${propiedad} "${valor}" está vacío.`)
-    if (typeof valor !== 'number')
-      return console.warn(`${propiedad} "${valor}" no es un número.`)
-    return true
-  }
+//   validarNumero(propiedad, valor) {
+//     if (!valor) return console.warn(`${propiedad} "${valor}" está vacío.`)
+//     if (typeof valor !== 'number')
+//       return console.warn(`${propiedad} "${valor}" no es un número.`)
+//     return true
+//   }
 
-  validarArreglo(propiedad, valor) {
-    if (!valor) return console.warn(`${propiedad} "${valor}" está vacío.`)
-    if (!(valor instanceof Array))
-      return console.warn(`${propiedad} "${valor}" no es un Arreglo.`)
-    if (valor.length === 0)
-      return console.warn(`${propiedad} "${valor}" no tiene datos.`)
+//   validarArreglo(propiedad, valor) {
+//     if (!valor) return console.warn(`${propiedad} "${valor}" está vacío.`)
+//     if (!(valor instanceof Array))
+//       return console.warn(`${propiedad} "${valor}" no es un Arreglo.`)
+//     if (valor.length === 0)
+//       return console.warn(`${propiedad} "${valor}" no tiene datos.`)
 
-    for (let caracter of valor) {
-      if (typeof caracter !== 'string')
-        return console.warn(`${caracter} no es una cadena de texto.`)
-    }
+//     for (let caracter of valor) {
+//       if (typeof caracter !== 'string')
+//         return console.warn(`${caracter} no es una cadena de texto.`)
+//     }
 
-    return true
-  }
+//     return true
+//   }
 
-  validarLongitudCadena(propiedad, valor, longitud) {
-    if (valor.length > longitud)
-      return console.warn(
-        `${propiedad} "${valor}" excedió el largo permitido de caracteres. (${longitud})`
-      )
+//   validarLongitudCadena(propiedad, valor, longitud) {
+//     if (valor.length > longitud)
+//       return console.warn(
+//         `${propiedad} "${valor}" excedió el largo permitido de caracteres. (${longitud})`
+//       )
 
-    return true
-  }
+//     return true
+//   }
 
-  validarIMDB(id) {
-    if (this.validarCadena('IMDB id', id))
-      if (!/^([a-z]){2}([0-9]){7}$/.test(id))
-        return console.warn(
-          `El IMDB id: "${id}" es incorrecto. Debe tener nueve caracteres y debe empezar con dos letras minúsculas seguido de siete números.`
-        )
-  }
+//   validarIMDB(id) {
+//     if (this.validarCadena('IMDB id', id))
+//       if (!/^([a-z]){2}([0-9]){7}$/.test(id))
+//         return console.warn(
+//           `El IMDB id: "${id}" es incorrecto. Debe tener nueve caracteres y debe empezar con dos letras minúsculas seguido de siete números.`
+//         )
+//   }
 
-  validarTitulo(titulo) {
-    if (this.validarCadena('IMDB título', titulo))
-      this.validarLongitudCadena('Título', titulo, 100)
-  }
+//   validarTitulo(titulo) {
+//     if (this.validarCadena('IMDB título', titulo))
+//       this.validarLongitudCadena('Título', titulo, 100)
+//   }
 
-  validarDirector(director) {
-    if (this.validarCadena('IMDB Director', director))
-      this.validarLongitudCadena('Director', director, 100)
-  }
+//   validarDirector(director) {
+//     if (this.validarCadena('IMDB Director', director))
+//       this.validarLongitudCadena('Director', director, 100)
+//   }
 
-  validarAño(año) {
-    if (this.validarNumero('Año de Estreno', año))
-      if (!/^([0-9]){4}$/.test(año))
-        return console.warn(
-          `Año de Estreno: "${año}" es incorrecto. Debe tener 4 números enteros.`
-        )
-  }
+//   validarAño(año) {
+//     if (this.validarNumero('Año de Estreno', año))
+//       if (!/^([0-9]){4}$/.test(año))
+//         return console.warn(
+//           `Año de Estreno: "${año}" es incorrecto. Debe tener 4 números enteros.`
+//         )
+//   }
 
-  validarPais(pais) {
-    this.validarArreglo('Pais', pais)
-  }
+//   validarPais(pais) {
+//     this.validarArreglo('Pais', pais)
+//   }
 
-  validarGeneros(generos) {
-    if (this.validarArreglo('Géneros', generos)) {
-      for (let genero of generos) {
-        if (!Pelicula.listaGeneros.includes(genero)) {
-          console.error(
-            `Genero(s) Incorrecto(s) "${genero}" no está incluida en la lista.`
-          )
-          Pelicula.mostrarGeneros()
-        }
-      }
-    }
-  }
-  validarCalificacion(calificacion) {
-    if (this.validarNumero('Calificación:', calificacion)) {
-      return calificacion < 0 || calificacion > 10
-        ? console.warn('La calificación tiene que ser entre 0 y 10')
-        : (this.calificacion = calificacion.toFixed(1))
-    }
-  }
+//   validarGeneros(generos) {
+//     if (this.validarArreglo('Géneros', generos)) {
+//       for (let genero of generos) {
+//         if (!Pelicula.listaGeneros.includes(genero)) {
+//           console.error(
+//             `Genero(s) Incorrecto(s) "${genero}" no está incluida en la lista.`
+//           )
+//           Pelicula.mostrarGeneros()
+//         }
+//       }
+//     }
+//   }
+//   validarCalificacion(calificacion) {
+//     if (this.validarNumero('Calificación:', calificacion)) {
+//       return calificacion < 0 || calificacion > 10
+//         ? console.warn('La calificación tiene que ser entre 0 y 10')
+//         : (this.calificacion = calificacion.toFixed(1))
+//     }
+//   }
 
-  mostrarFicha({ id, titulo, director, año, pais, generos, calificacion }) {
-    console.info(
-      `Título: ${titulo} \nDirector: ${director} \nAño: ${año} \nPaises: ${pais.join(
-        ' - '
-      )} \nGéneros: ${generos.join(
-        ' - '
-      )} \nCalificación: ${calificacion} \nID IMDB: ${id}`
-    )
-  }
-}
+//   mostrarFicha({ id, titulo, director, año, pais, generos, calificacion }) {
+//     console.info(
+//       `Título: ${titulo} \nDirector: ${director} \nAño: ${año} \nPaises: ${pais.join(
+//         ' - '
+//       )} \nGéneros: ${generos.join(
+//         ' - '
+//       )} \nCalificación: ${calificacion} \nID IMDB: ${id}`
+//     )
+//   }
+// }
 
-const peliculasFavoritas = [
-  {
-    id: 'tt1234567',
-    titulo: 'Señor de los Anillos',
-    director: 'Peter Jackson',
-    año: 2010,
-    pais: ['Nueva Zelanda'],
-    generos: ['Comedy', 'Action'],
-    calificacion: 9,
-  },
-  {
-    id: 'jh1234456',
-    titulo: 'Captain America: The Winter Soldier',
-    director: 'Pepito',
-    año: 2012,
-    pais: ['EE.UU'],
-    generos: ['Action', 'Comedy'],
-    calificacion: 8.5,
-  },
-  {
-    id: 'jh1234456',
-    titulo: 'Equilibrium',
-    director: 'Pepito',
-    año: 2000,
-    pais: ['EE.UU', 'Germany'],
-    generos: ['Action', 'Comedy'],
-    calificacion: 8.5,
-  },
-]
+// const peliculasFavoritas = [
+//   {
+//     id: 'tt1234567',
+//     titulo: 'Señor de los Anillos',
+//     director: 'Peter Jackson',
+//     año: 2010,
+//     pais: ['Nueva Zelanda'],
+//     generos: ['Comedy', 'Action'],
+//     calificacion: 9,
+//   },
+//   {
+//     id: 'jh1234456',
+//     titulo: 'Captain America: The Winter Soldier',
+//     director: 'Pepito',
+//     año: 2012,
+//     pais: ['EE.UU'],
+//     generos: ['Action', 'Comedy'],
+//     calificacion: 8.5,
+//   },
+//   {
+//     id: 'jh1234456',
+//     titulo: 'Equilibrium',
+//     director: 'Pepito',
+//     año: 2000,
+//     pais: ['EE.UU', 'Germany'],
+//     generos: ['Action', 'Comedy'],
+//     calificacion: 8.5,
+//   },
+// ]
 
-peliculasFavoritas.forEach(element => {
-  new Pelicula(element).mostrarFicha(element)
-})
+// peliculasFavoritas.forEach(element => {
+//   new Pelicula(element).mostrarFicha(element)
+// })
