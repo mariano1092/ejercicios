@@ -242,30 +242,25 @@ img {
 
 /* #################### MODO OSCURO Y CLARO #################### */
 
-.dark {
-	background-color: lightslategray;
-	color: #eee;
-}
-
-.white {
-	background-color: #eee;
+.theme-box{
+	display: flex;
+	position: absolute;
+	border: 1px solid rgba(238, 238, 238, 0.557);
+	width: 52px;
+	height: 24px;
+	border-radius: 12px;
+	align-items: center;
+	right: 2vw;
+	cursor: pointer;
 }
 
 .theme-button {
-	position: absolute;
-	width: 35px;
 	color: #eee;
 	background: transparent;
 	border: 0;
-	cursor: pointer;
-	right: 2vw;
+	margin-left: 5px;
 }
 
-.theme-button i {
-	font-size: 1.5rem;
-}
-
-.theme-button:hover {
-	font-size: 1.7rem;
-	text-shadow: 3px 3px 50px black;
+.light{
+	display: none;
 }
