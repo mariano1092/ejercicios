@@ -259,8 +259,11 @@ img {
 	background: transparent;
 	border: 0;
 	margin-left: 5px;
+	transition: all 0.3s ease;
 }
 
-.light{
-	display: none;
+.dark-theme{
+	background:linear-gradient(4deg, rgb(178, 167, 6) 0%, rgb(255, 255, 0) 100%);
+	color: #222;
+	border-color: darkkhaki;
 }
