@@ -267,3 +267,15 @@ img {
 	color: #222;
 	border-color: darkkhaki;
 }
+
+.section-four-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.section-four-container * {
+	margin: 1.5rem;
+}
