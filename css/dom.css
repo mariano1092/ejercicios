@@ -314,3 +314,11 @@ div.submit-btns > * {
   width: 100px;
   padding: 0.5rem;
 }
+
+/* #################### SECCIÓN FORMULARIO #################### */
+
+#device-detection p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}

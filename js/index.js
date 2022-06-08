@@ -6,6 +6,7 @@ import moveScroll from './exercise5.js'
 import toggleTheme from './exercise6.js'
 import responsiveMedia from './exercise7.js'
 import responsiveTester from './exercise8.js'
+import deviceDetection from './exercise9.js'
 
 const doc = document
 
@@ -30,6 +31,7 @@ doc.addEventListener('DOMContentLoaded', e => {
 	`
   )
   responsiveTester('webpage', 'width-page', 'height-page', 'section-five__form')
+  deviceDetection("device-detection")
 })
 
 doc.addEventListener('keydown', e => {
