@@ -86,7 +86,7 @@ img {
 /* #################### SECCIONES #################### */
 
 .section {
-  width: 100%;
+  max-width: 80%;
   margin-top: 2rem;
   padding: 2rem;
   padding-top: 1rem;
@@ -313,4 +313,15 @@ img {
 div.submit-btns > * {
   width: 100px;
   padding: 0.5rem;
+}
+
+/* #################### DETECCIÓN DE DISPOSITIVO #################### */
+
+#device-info {
+  margin-top: 2rem;
+}
+
+#device-info p {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
