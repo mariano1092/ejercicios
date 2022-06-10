@@ -315,6 +315,7 @@ div.submit-btns > * {
   padding: 0.5rem;
 }
 
+<<<<<<< HEAD
 /* #################### DETECCIÓN DE DISPOSITIVO #################### */
 
 #device-info {
@@ -325,3 +326,12 @@ div.submit-btns > * {
   font-size: 1.2rem;
   font-weight: bold;
 }
+=======
+/* #################### SECCIÓN FORMULARIO #################### */
+
+#device-detection p {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+>>>>>>> 834941c92b3f4af32a1ca55425b4c76c2ca3b775

@@ -31,7 +31,11 @@ doc.addEventListener('DOMContentLoaded', e => {
 	`
   )
   responsiveTester('webpage', 'width-page', 'height-page', 'section-five__form')
+<<<<<<< HEAD
   deviceDetection('device-info')
+=======
+  deviceDetection("device-detection")
+>>>>>>> 834941c92b3f4af32a1ca55425b4c76c2ca3b775
 })
 
 doc.addEventListener('keydown', e => {
