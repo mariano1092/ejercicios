@@ -1,4 +1,8 @@
 import handleHamburger from './exercise1.js'
+import redDetection from './exercise10.js'
+import webcamContaint from './exercise11.js'
+import getGeolocation from './exercise12.js'
+import searchPokemon from './exercise13.js'
 import { showClock, initAlarm } from './exercise2.js'
 import { moveBall } from './exercise3.js'
 import { countdown } from './exercise4.js'
@@ -33,8 +37,9 @@ doc.addEventListener('DOMContentLoaded', e => {
   responsiveTester('webpage', 'width-page', 'height-page', 'section-five__form')
 
   deviceDetection('device-info')
-
-  deviceDetection('device-detection')
+  webcamContaint()
+  getGeolocation("geolocation", "map")
+  searchPokemon("#buscar-pokemon")
 })
 
 doc.addEventListener('keydown', e => {
@@ -42,3 +47,4 @@ doc.addEventListener('keydown', e => {
 })
 
 toggleTheme('.theme-box', 'dark-theme')
+redDetection("red-detection")

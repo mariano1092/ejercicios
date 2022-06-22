@@ -20,6 +20,14 @@ img {
   height: auto;
 }
 
+h2 {
+  margin-bottom: 2rem;
+}
+
+h3 {
+  margin-bottom: 2rem;
+}
+
 /* #################### CABECERA #################### */
 
 .header {
@@ -31,6 +39,7 @@ img {
   align-items: center;
   color: aliceblue;
   position: fixed;
+  z-index: 10;
   top: 0;
 }
 
@@ -61,6 +70,7 @@ img {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: 20;
   transform: translate(0, -100%);
   transition: transform 0.3s ease;
 }
@@ -93,11 +103,13 @@ img {
   margin: 0 auto;
   text-align: center;
 }
+
 /* #################### MENU HAMBURGUESA #################### */
 
 .section h2 {
   font-size: 1.5rem;
 }
+
 .burger-menu {
   display: inline-block;
   width: 40px;
@@ -126,7 +138,8 @@ img {
   display: block;
   position: absolute;
   background: #fff;
-  transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+  transition: all 0.25s ease;
+  /* Propiedades a animar | Tiempo | Tipo animación*/
   transform-origin: 0px 100%;
   overflow: hidden;
   z-index: 9;
@@ -138,6 +151,7 @@ img {
 .burger-menu span:nth-child(1) {
   margin-top: 9px;
 }
+
 .burger-menu span:nth-child(2) {
   top: calc(50% - 2px);
 }
@@ -187,13 +201,16 @@ img {
   margin-top: 2rem;
   padding: 1rem;
 }
+
 .clock-content p {
   font-size: 2rem;
   letter-spacing: 1rem;
 }
+
 .buttons {
   margin-top: 2rem;
 }
+
 .btn {
   padding: 1rem;
   margin: 0.5rem 0.5rem;
@@ -310,7 +327,7 @@ img {
   margin: 0 auto;
 }
 
-div.submit-btns > * {
+div.submit-btns>* {
   width: 100px;
   padding: 0.5rem;
 }
@@ -332,4 +349,91 @@ div.submit-btns > * {
   margin-top: 2rem;
   font-size: 2rem;
   font-weight: bold;
+}
+
+/* #################### DETECCIÓN DE RED #################### */
+
+.online,
+.offline {
+  position: sticky;
+  top: 0;
+  z-index: 98;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #069626;
+  color: #fff;
+}
+
+.offline {
+  background-color: #960606;
+}
+
+#red-detection {
+  margin-top: 2rem;
+}
+
+/* #################### DETECCIÓN DE WEBCAM #################### */
+
+
+.video {
+  margin-top: 2rem;
+}
+
+.video video {
+  border: 5px solid green;
+  border-radius: .5rem;
+}
+
+/* #################### DETECCIÓN DE GEOLOCALIZACIÓN #################### */
+
+#geolocation {
+  margin-top: 2rem;
+}
+
+#geolocation span {
+  font-weight: bold;
+}
+
+/* #################### FILTRO DE BÚSQUEDA #################### */
+
+#gallery {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-pokemon {
+  background-color: #4068d7;
+  max-width: 250px;
+  height: 300px;
+  max-height: 300px;
+  border: 2px solid #4068d7;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.card-pokemon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-pokemon figcaption {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  padding: .8rem;
+  background-color: #4068d75d;
+  color: #fff
+}
+
+.filter {
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
 }

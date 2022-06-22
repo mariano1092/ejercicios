@@ -1,5 +1,7 @@
 const doc = document
 
 export default function deviceDetection(deviceInfo) {
-  doc.getElementById(deviceInfo).innerHTML = `<p>${navigator.userAgent}</p>`
+  const $p = doc.createElement("p")
+  $p.textContent = `${navigator.userAgent}`
+  doc.getElementById(deviceInfo).insertAdjacentElement("afterbegin", $p)
 }
