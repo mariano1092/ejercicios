@@ -49,7 +49,7 @@ h3 {
   letter-spacing: 4px;
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
   .header h1 {
     font-size: 1rem;
   }
@@ -67,7 +67,6 @@ h3 {
   opacity: 70%;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
   z-index: 20;
@@ -93,15 +92,44 @@ h3 {
   font-weight: 700;
 }
 
+@media screen and (min-width: 1024px) {
+  .aside {
+    width: 20vw;
+    top: 75px;
+    right: 0;
+    bottom: 0;
+    background-color: #427398;
+    transform: none;
+  }
+
+  .aside a {
+    color: #fff;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+}
+
 /* #################### SECCIONES #################### */
 
 .section {
   max-width: 80%;
   margin-top: 2rem;
+  min-height: 85vh;
   padding: 2rem;
   padding-top: 1rem;
   margin: 0 auto;
   text-align: center;
+}
+
+@media screen and (min-width: 1024px) {
+  .section {
+    max-width: 75vw;
+    margin: 0 auto 0 1rem;
+  }
+
+  .activeSpy {
+    background-color: #222cc2;
+  }
 }
 
 /* #################### MENU HAMBURGUESA #################### */
@@ -171,7 +199,7 @@ h3 {
   background-color: #427398;
   border-radius: 50%;
   bottom: 1vh;
-  right: 1vw;
+  left: 1vw;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -193,6 +221,12 @@ h3 {
 .hidden {
   visibility: hidden;
   opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .burger-menu {
+    display: none;
+  }
 }
 
 /* #################### RELOJ#################### */
@@ -436,4 +470,181 @@ div.submit-btns>* {
   visibility: hidden;
   opacity: 0;
   order: 1;
+}
+
+/* #################### LOTERIA#################### */
+
+#lottery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.contestant {
+  display: inline-block;
+  width: 180px;
+  padding: 1rem 0;
+  border: 2px dotted #4068d7;
+  border-radius: 8px;
+}
+
+#raffle {
+  margin-top: 1rem;
+  padding: .8rem 2rem;
+}
+
+.winner {
+  background-color: #069626;
+  color: #fff;
+}
+
+/* #################### CARRUSEL #################### */
+
+#carrousel {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.sliders {
+  height: 400px;
+  position: relative;
+}
+
+.carrousel__slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease;
+  overflow: hidden;
+}
+
+.slide__content {
+  width: 50%;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  text-align: left;
+}
+
+.slide__content h4 {
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.btns-carrousel {
+  position: absolute;
+  top: calc(50% - 2rem);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btns-carrousel a {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  font-size: 3rem;
+  color: #4068d7;
+  text-decoration: none;
+}
+
+#carrousel img {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* #################### FORMULARIO #################### */
+
+.form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form [required]:valid {
+  border-color: #069626;
+}
+
+.form [required]:invalid {
+  border-color: #960606;
+}
+
+.form legend {
+  font-size: 1.8rem;
+  font-weight: bold;
+  background: #222;
+  background: linear-gradient(20deg, rgb(40, 90, 204, 1) 0%, rgba(64, 70, 212, 1) 50%, rgba(16, 0, 255, 1) 100%);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.form__content {
+  display: flex;
+  flex-direction: column;
+  padding: .8rem;
+}
+
+.form__content label {
+  align-self: flex-start;
+  margin-bottom: .3rem;
+  text-transform: lowercase;
+  color: #545caf;
+}
+
+.form__content input {
+  padding: .3rem 0;
+  outline: none;
+  border: 2px solid #758dd2;
+  border-radius: .3rem;
+}
+
+.form__content textarea {
+  border-radius: .3rem;
+  border: 2px solid #758dd2;
+  outline: none;
+  resize: none;
+}
+
+.form__btns {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.form__btns input {
+  padding: .5rem 1.5rem;
+  background-color: transparent;
+  border: 1.5px solid #758dd2;
+  border-radius: .2rem;
+  color: #4068d7;
+  cursor: pointer;
+}
+
+.form__btns input:hover {
+  background-color: #4068d7;
+  color: #fff
+}
+
+
+.form__loader {
+  color: red;
+}
+
+.none {
+  display: none;
 }

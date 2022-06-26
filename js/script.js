@@ -21,7 +21,7 @@ function cortarCadena(cadena, indice) {
 console.log(cortarCadena(cadena, 12))
 */
 
-/* FUNCIÓN PARA CORTAR UNA CADENA MEDIANTE UN CARACTER 
+/* FUNCIÓN PARA CORTAR UNA CADENA MEDIANTE UN CARACTER
 
 function cortarCadenaPorCaracter(cadena, caracter) {
     console.log(cadena, caracter)
@@ -262,7 +262,7 @@ console.log(contarVocalesYConsonantes("Hola como estas"));
 console.log(contarVocalesConsonantes("Hola como estas?"));
 
 */
-/* FUNCION PARA VALIDAR NOMBRE 
+/* FUNCION PARA VALIDAR NOMBRE
 function validarNombre(nombre = '') {
   if (!nombre) return 'No ingresaste un nombre.'
   if (typeof nombre !== 'string') return 'El tipo ingresado no es una palabra'
@@ -394,7 +394,7 @@ console.log(eliminarDuplicado([1, 2, 3, 2, 1, 'x', 'a', 'a', 'b', 'ab']))
 
 */
 
-/* FUNCION SACAR PROMEIO
+/* FUNCION SACAR PROMEDIO
 
 function sacarPromedio(array) {
   let total = 0

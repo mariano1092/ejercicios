@@ -3,6 +3,10 @@ import redDetection from './exercise10.js'
 import webcamContaint from './exercise11.js'
 import getGeolocation from './exercise12.js'
 import searchPokemon from './exercise13.js'
+import toRaffle from './exercise14.js'
+import carrousel from './exercise15.js'
+import sectionObserver from './exercise16.js'
+import videoSpy from './exercise17.js'
 import { showClock, initAlarm } from './exercise2.js'
 import { moveBall } from './exercise3.js'
 import { countdown } from './exercise4.js'
@@ -40,6 +44,10 @@ doc.addEventListener('DOMContentLoaded', e => {
   webcamContaint()
   getGeolocation("geolocation", "map")
   searchPokemon("#buscar-pokemon")
+  toRaffle("#raffle")
+  carrousel("#btn-right", "#btn-left")
+  sectionObserver()
+  videoSpy()
 })
 
 doc.addEventListener('keydown', e => {
