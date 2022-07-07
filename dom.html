@@ -216,36 +216,36 @@
     </section>
     <section id="section-fourteen" class="section" data-scroll-spy>
       <h2>Validación de Formulario</h2>
-      <form action="" class="form">
+      <form class="form">
         <legend>¡Envíanos tu comentario!</legend>
         <div class="form__content">
           <label for="name">Nombre</label>
-          <input type="text" name="name" id="name" title="Nombre solo acepta letras y espacios"
+          <input type="text" name="name" title="Nombre solo acepta letras y espacios"
             pattern="^[a-zA-ZñÑÁáÉéÍíÓóÚú\s]+$" required>
         </div>
         <div class="form__content">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" title="Email incorrecto"
-            pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" required>
+          <input type="email" name="email" title="Email incorrecto" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
+            required>
         </div>
         <div class="form__content">
           <label for="subject">Asunto</label>
-          <input type="text" name="subject" id="subject" title="Asunto requerido" required>
+          <input type="text" name="subject" title="Asunto requerido" required>
         </div>
         <div class="form__content">
           <label for="comment">Comentario</label>
-          <textarea name="comment" id="comment" cols="30" rows="10"
-            title="Tu comentario no debe exceder los 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
+          <textarea name="comment" cols="30" rows="10" title="Tu comentario no debe exceder los 255 caracteres"
+            data-pattern="^.{1,255}$" required></textarea>
         </div>
         <div class="form__btns">
           <input type="submit" value="Enviar">
           <input type="reset" value="Borrar">
         </div>
         <div class="form__loader none">
-          <img src="./assets/loader.svg" alt="Loading">
+          <img src="./assets/oval.svg" alt="Loading">
         </div>
         <div class="form__response none">
-          <p>¡Los datos han sido Enviados</p>
+          <p>Comentario Enviado ¡Gracias!</p>
         </div>
       </form>
     </section>

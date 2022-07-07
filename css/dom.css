@@ -580,10 +580,6 @@ div.submit-btns>* {
   border-color: #069626;
 }
 
-.form [required]:invalid {
-  border-color: #960606;
-}
-
 .form legend {
   font-size: 1.8rem;
   font-weight: bold;
@@ -640,11 +636,43 @@ div.submit-btns>* {
   color: #fff
 }
 
-
+.form__response,
 .form__loader {
-  color: red;
+  margin-top: 2rem;
+}
+
+.form__response p {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #069626
+}
+
+.form-error {
+  margin-top: -1px;
+  background-color: #bc1b1b;
+  padding: 5px 0;
+  font-size: 80%;
+  color: #fff;
+  transition: all .8s ease;
+}
+
+.form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
 }
 
 .none {
   display: none;
+}
+
+@keyframes show-message {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }

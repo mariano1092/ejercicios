@@ -7,6 +7,7 @@ import toRaffle from './exercise14.js'
 import carrousel from './exercise15.js'
 import sectionObserver from './exercise16.js'
 import videoSpy from './exercise17.js'
+import formValidation from './exercise18.js'
 import { showClock, initAlarm } from './exercise2.js'
 import { moveBall } from './exercise3.js'
 import { countdown } from './exercise4.js'
@@ -48,6 +49,7 @@ doc.addEventListener('DOMContentLoaded', e => {
   carrousel("#btn-right", "#btn-left")
   sectionObserver()
   videoSpy()
+  formValidation()
 })
 
 doc.addEventListener('keydown', e => {
